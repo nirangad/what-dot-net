@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Fortnite",
+    "price": 0.0,
+    "releasedDate": "2017-07-21",
+    "url": "https://www.epicgames.com/fortnite/en-US/home",
+    "genreId": 1
+  },
+  {
+    "name": "Minecraft",
+    "price": 26.95,
+    "releasedDate": "2011-11-18",
+    "url": "https://www.minecraft.net/",
+    "genreId": 2
+  },
+  {
+    "name": "League of Legends",
+    "price": 0.0,
+    "releasedDate": "2009-10-27",
+    "url": "https://www.leagueoflegends.com/",
+    "genreId": 3
+  },
+  {
+    "name": "Valorant",
+    "price": 0.0,
+    "releasedDate": "2020-06-02",
+    "url": "https://playvalorant.com/",
+    "genreId": 14
+  },
+  {
+    "name": "Among Us",
+    "price": 5.0,
+    "releasedDate": "2018-11-16",
+    "url": "https://innersloth.com/gameAmongUs.php",
+    "genreId": 7
+  },
+  {
+    "name": "Call of Duty: Warzone",
+    "price": 0.0,
+    "releasedDate": "2020-03-10",
+    "url": "https://www.callofduty.com/warzone",
+    "genreId": 4
+  },
+  {
+    "name": "PUBG: Battlegrounds",
+    "price": 29.99,
+    "releasedDate": "2017-12-20",
+    "url": "https://www.pubg.com/",
+    "genreId": 5
+  },
+  {
+    "name": "Apex Legends",
+    "price": 0.0,
+    "releasedDate": "2019-02-04",
+    "url": "https://www.ea.com/games/apex-legends",
+    "genreId": 1
+  },
+  {
+    "name": "World of Warcraft",
+    "price": 14.99,
+    "releasedDate": "2004-11-23",
+    "url": "https://worldofwarcraft.com/",
+    "genreId": 6
+  },
+  {
+    "name": "The Elder Scrolls Online",
+    "price": 19.99,
+    "releasedDate": "2014-04-04",
+    "url": "https://www.elderscrollsonline.com/",
+    "genreId": 6
+  },
+  {
+    "name": "Overwatch",
+    "price": 39.99,
+    "releasedDate": "2016-05-24",
+    "url": "https://playoverwatch.com/",
+    "genreId": 8
+  },
+  {
+    "name": "Rocket League",
+    "price": 0.0,
+    "releasedDate": "2015-07-07",
+    "url": "https://www.rocketleague.com/",
+    "genreId": 9
+  },
+  {
+    "name": "Destiny 2",
+    "price": 0.0,
+    "releasedDate": "2017-09-06",
+    "url": "https://www.bungie.net/7/en/Destiny",
+    "genreId": 6
+  },
+  {
+    "name": "Counter-Strike: Global Offensive",
+    "price": 0.0,
+    "releasedDate": "2012-08-21",
+    "url": "https://blog.counter-strike.net/",
+    "genreId": 10
+  },
+  {
+    "name": "Fall Guys",
+    "price": 19.99,
+    "releasedDate": "2020-08-04",
+    "url": "https://fallguys.com/",
+    "genreId": 7
+  },
+  {
+    "name": "Dead by Daylight",
+    "price": 19.99,
+    "releasedDate": "2016-06-14",
+    "url": "https://deadbydaylight.com/",
+    "genreId": 11
+  },
+  {
+    "name": "Genshin Impact",
+    "price": 0.0,
+    "releasedDate": "2020-09-28",
+    "url": "https://genshin.mihoyo.com/",
+    "genreId": 12
+  },
+  {
+    "name": "Phasmophobia",
+    "price": 13.99,
+    "releasedDate": "2020-09-18",
+    "url": "https://store.steampowered.com/app/739630/Phasmophobia/",
+    "genreId": 13
+  },
+  {
+    "name": "Rainbow Six Siege",
+    "price": 19.99,
+    "releasedDate": "2015-12-01",
+    "url": "https://www.ubisoft.com/game/rainbow-six/siege",
+    "genreId": 10
+  },
+  {
+    "name": "Sea of Thieves",
+    "price": 39.99,
+    "releasedDate": "2018-03-20",
+    "url": "https://www.seaofthieves.com/",
+    "genreId": 7
+  },
+  {
+    "name": "Star Wars: The Old Republic",
+    "price": 0.0,
+    "releasedDate": "2011-12-20",
+    "url": "https://www.swtor.com/",
+    "genreId": 6
+  },
+  {
+    "name": "Final Fantasy XIV Online",
+    "price": 12.99,
+    "releasedDate": "2010-09-30",
+    "url": "https://www.finalfantasyxiv.com/",
+    "genreId": 6
+  },
+  {
+    "name": "Dota 2",
+    "price": 0.0,
+    "releasedDate": "2013-07-09",
+    "url": "https://www.dota2.com/",
+    "genreId": 3
+  },
+  {
+    "name": "Warframe",
+    "price": 0.0,
+    "releasedDate": "2013-03-25",
+    "url": "https://www.warframe.com/",
+    "genreId": 12
+  },
+  {
+    "name": "Halo Infinite",
+    "price": 0.0,
+    "releasedDate": "2021-12-08",
+    "url": "https://www.halowaypoint.com/",
+    "genreId": 1
+  }
+]
