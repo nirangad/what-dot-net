@@ -81,7 +81,6 @@ public static class GamesEndpoints
                 Direct Approach
                 Trying LINQ directly: dbContext.Games.Where(g => g.Id == id).ExecuteDelete();
             */
-
             Game? game = await dbContext.Games.FirstOrDefaultAsync(g => g.Id == id);
             if (game is null)
             {

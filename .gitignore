@@ -70,6 +70,11 @@ appsettings*.json
 *.env
 .env.*
 
+# DB
+GameStore.Api/Data/Db/GameStore.db
+GameStore.Api/Data/Db/GameStore.db-shm
+GameStore.Api/Data/Db/GameStore.db-wal
+
 # Ignore by operating system
 ## Windows
 Thumbs.db
