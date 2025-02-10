@@ -1,0 +1,7 @@
+{
+  "dotnet.defaultSolution": "GameStore.sln",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.defaultFormatter": "ms-dotnettools.csharp",
+  "cSpell.words": ["Platformer"]
+}

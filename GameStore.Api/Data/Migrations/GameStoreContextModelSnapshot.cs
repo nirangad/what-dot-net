@@ -64,52 +64,77 @@ namespace GameStore.Api.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Action"
+                            Name = "Battle Royale"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Adventure"
+                            Name = "Sandbox"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "RPG"
+                            Name = "MOBA"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Simulation"
+                            Name = "FPS"
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Strategy"
-                        },
-                        new
-                        {
-                            Id = 6,
                             Name = "Sports"
                         },
                         new
                         {
+                            Id = 6,
+                            Name = "Battle Royale/Party"
+                        },
+                        new
+                        {
                             Id = 7,
-                            Name = "Puzzle"
+                            Name = "Social Deduction"
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Horror"
+                            Name = "Action RPG"
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Platformer"
+                            Name = "MMORPG"
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Shooter"
+                            Name = "FPS/MMORPG"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Adventure"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "PvPvE Shooter"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Card Game"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Tactical Shooter"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Horror/Co-op"
                         });
                 });
 

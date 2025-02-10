@@ -3177,11 +3177,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nirangad/WorkDir/Randoms/DotNET/GameStore/GameStore.Api/GameStore.Api.csproj",
+      "projectUniqueName": "/Users/nirangad/WorkDir/Randoms/DotNET/what-dot-net/GameStore.Api/GameStore.Api.csproj",
       "projectName": "GameStore.Api",
-      "projectPath": "/Users/nirangad/WorkDir/Randoms/DotNET/GameStore/GameStore.Api/GameStore.Api.csproj",
+      "projectPath": "/Users/nirangad/WorkDir/Randoms/DotNET/what-dot-net/GameStore.Api/GameStore.Api.csproj",
       "packagesPath": "/Users/nirangad/.nuget/packages/",
-      "outputPath": "/Users/nirangad/WorkDir/Randoms/DotNET/GameStore/GameStore.Api/obj/",
+      "outputPath": "/Users/nirangad/WorkDir/Randoms/DotNET/what-dot-net/GameStore.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nirangad/.nuget/NuGet/NuGet.Config"
