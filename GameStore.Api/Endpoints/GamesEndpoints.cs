@@ -30,9 +30,9 @@ public static class GamesEndpoints
         });
 
         // GET /games/{id}
-        appGroup.MapGet("/{id}", (int id, GameStoreContext dbContext) =>
+        appGroup.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
         {
-            Game? game = dbContext.Games.Include(g => g.Genre).FirstOrDefault(g => g.Id == id);
+            Game? game = await dbContext.Games.Include(g => g.Genre).FirstOrDefaultAsync(g => g.Id == id);
 
             if (game is null)
             {
@@ -45,10 +45,10 @@ public static class GamesEndpoints
         }).WithName(GetGame);
 
         // POST /games
-        appGroup.MapPost("/", (CreateGameContract newGame, GameStoreContext dbContext) =>
+        appGroup.MapPost("/", async (CreateGameContract newGame, GameStoreContext dbContext) =>
         {
             Game game = newGame.toGame();
-            game.Genre = dbContext.Genres.Find(newGame.GenreId);
+            game.Genre = await dbContext.Genres.FindAsync(newGame.GenreId);
 
             dbContext.Games.Add(game);
             dbContext.SaveChanges();
@@ -59,9 +59,9 @@ public static class GamesEndpoints
         });
 
         // PUT /games/{id}
-        appGroup.MapPut("/{id}", (int id, UpdateGameContract updateGame, GameStoreContext dbContext) =>
+        appGroup.MapPut("/{id}", async (int id, UpdateGameContract updateGame, GameStoreContext dbContext) =>
         {
-            Game? game = dbContext.Games.Include(g => g.Genre).FirstOrDefault(g => g.Id == id);
+            Game? game = await dbContext.Games.Include(g => g.Genre).FirstOrDefaultAsync(g => g.Id == id);
             if (game is null)
             {
                 return Results.NotFound(new { Message = ErrorNoGame });
@@ -75,15 +75,14 @@ public static class GamesEndpoints
         });
 
         // PUT /games/{id}
-        appGroup.MapDelete("/{id}", (int id, GameStoreContext dbContext) =>
+        appGroup.MapDelete("/{id}", async (int id, GameStoreContext dbContext) =>
         {
             /* 
                 Direct Approach
                 Trying LINQ directly: dbContext.Games.Where(g => g.Id == id).ExecuteDelete();
             */
 
-
-            Game? game = dbContext.Games.FirstOrDefault(g => g.Id == id);
+            Game? game = await dbContext.Games.FirstOrDefaultAsync(g => g.Id == id);
             if (game is null)
             {
                 return Results.NotFound(new { Message = ErrorNoGame });
@@ -103,7 +102,7 @@ public static class GamesEndpoints
         RouteGroupBuilder appGroup = app.MapGroup("games/genres").WithParameterValidation();
 
         // GET /games/genres
-        appGroup.MapGet("/", (GameStoreContext dbContext) => Results.Ok(dbContext.Genres.ToList()));
+        appGroup.MapGet("/", async (GameStoreContext dbContext) => Results.Ok(await dbContext.Genres.ToListAsync()));
 
         return appGroup;
     }
