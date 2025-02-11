@@ -101,7 +101,7 @@ public static class GamesEndpoints
         RouteGroupBuilder appGroup = app.MapGroup("games/genres").WithParameterValidation();
 
         // GET /games/genres
-        appGroup.MapGet("/", async (GameStoreContext dbContext) => Results.Ok(await dbContext.Genres.ToListAsync()));
+        appGroup.MapGet("/", async (GameStoreContext dbContext) => Results.Ok(await dbContext.Genres.AsNoTracking().ToListAsync()));
 
         return appGroup;
     }

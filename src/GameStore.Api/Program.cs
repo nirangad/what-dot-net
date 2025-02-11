@@ -31,6 +31,6 @@ app.MapGamesEndpoints();
 // GET POST PUT DELETE genres
 app.MapGamesGenreEndpoints();
 
-app.MigrateDb();
+await app.MigrateDbAsync();
 
 await app.RunAsync();
