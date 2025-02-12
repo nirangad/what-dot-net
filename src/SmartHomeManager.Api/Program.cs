@@ -2,6 +2,7 @@ using Asp.Versioning;
 using Asp.Versioning.Conventions;
 using Scalar.AspNetCore;
 using SmartHomeManager.Api.Middleware;
+using SmartHomeManager.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,9 @@ builder.Services.AddApiVersioning(options =>
     // Read API version from header
     options.ApiVersionReader = new HeaderApiVersionReader("api-version");
 });
+
+// Global Logging Configuration
+builder.ConfigureLogging();
 
 var app = builder.Build();
 
