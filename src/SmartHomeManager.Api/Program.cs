@@ -1,7 +1,4 @@
-using Asp.Versioning;
 using Asp.Versioning.Conventions;
-using Scalar.AspNetCore;
-using SmartHomeManager.Api.Middleware;
 using SmartHomeManager.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,39 +8,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 // Add API versioning
-builder.Services.AddApiVersioning(options =>
-{
-    options.AssumeDefaultVersionWhenUnspecified = true; // Use default version if none is specified
-    options.DefaultApiVersion = new ApiVersion(1, 0); // Default API version is 1.0
-    options.ReportApiVersions = true; // Add version info in response headers
-
-    // Read API version from header
-    options.ApiVersionReader = new HeaderApiVersionReader("api-version");
-});
+builder.UseApiVersioning();
 
 // Global Logging Configuration
 builder.ConfigureLogging();
 
 var app = builder.Build();
 
-var apiVersionSet = app.NewApiVersionSet()
-                       .HasApiVersion(1, 0)
-                       .HasApiVersion(2, 0)
-                       .ReportApiVersions() // Add version info in response headers
-                       .Build();
+// API Version Set
+var apiVersionSet = app.PrepareApiVersionSet();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference();
-}
+app.UseScalar();
 
 // Global Error Handling Middleware
-app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+app.UseGlobalExceptionHandling();
 
-// Global Logging Middleware
-app.UseMiddleware<LoggingMiddleware>();
+// Global Logging Middleware with Serilog
+app.UseSerilog();
 
 // Redirects HTTP traffic to HTTPS
 app.UseHttpsRedirection();
@@ -68,7 +50,6 @@ app.MapGet("/success", () =>
 
 app.MapGet("/error", () =>
 {
-    // throw new InvalidOperationException("This is a test exception.");
     Random rnd = new Random();
     int a = rnd.Next(1, 4);
     int b = rnd.Next(1, 4);

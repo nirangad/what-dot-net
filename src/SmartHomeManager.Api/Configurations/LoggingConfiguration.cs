@@ -1,4 +1,5 @@
 using Serilog;
+using SmartHomeManager.Api.Middleware;
 
 namespace SmartHomeManager.Configurations;
 
@@ -19,5 +20,10 @@ public static class LoggingConfiguration
                   .Enrich.WithMachineName()
                   .Enrich.WithEnvironmentName();
         });
+    }
+
+    public static void UseSerilog(this WebApplication app)
+    {
+        app.UseMiddleware<LoggingMiddleware>();
     }
 }
