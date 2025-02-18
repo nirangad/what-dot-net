@@ -1,7 +1,13 @@
 using Asp.Versioning.Conventions;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Options;
 using SmartHomeManager.Configurations;
+using SmartHomeManager.Configurations.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Setting up caching service
+builder.UseRedis();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -12,6 +18,13 @@ builder.UseApiVersioning();
 
 // Global Logging Configuration
 builder.ConfigureLogging();
+
+// Add AWS Secrets Manager
+// Add AWS Systems Manager Parameter Store to Configuration
+builder.UseAwsSecretManager();
+
+AwsSettings? awsSettings = builder.GetLocalSettings<AwsSettings>(AwsConfiguration.AWS_SETTINGS);
+Console.WriteLine($"AWS Settings fetched from Secret Manager :\n {Newtonsoft.Json.JsonConvert.SerializeObject(awsSettings)}");
 
 var app = builder.Build();
 
@@ -28,7 +41,30 @@ app.UseGlobalExceptionHandling();
 app.UseSerilog();
 
 // Redirects HTTP traffic to HTTPS
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
+
+app.MapGet("/test-config", async (IDistributedCache cache) =>
+{
+    string key = "Test_Key";
+
+    // Read the cached value
+    string? cachedTime = await cache.GetStringAsync(key);
+
+    // Write a test value
+    Random rnd = new Random();
+    string newTime = DateTime.Now.ToString("h:mm:ss tt");
+
+    await cache.SetStringAsync(key, newTime, new DistributedCacheEntryOptions
+    {
+        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+    });
+
+    return Results.Ok(new
+    {
+        CachedValue = cachedTime ?? "[Cache Miss!]",
+        NewValue = newTime
+    });
+});
 
 app.MapGet("/greetings", (HttpContext httpContext) =>
 {
